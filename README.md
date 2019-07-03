@@ -13,11 +13,17 @@ go get -u github.com/gorilla/mux
 go get -u github.com/lib/pq
 ```
 * Set DEVMACHINE environment variable
-`export DEVMACHINE='true'`
+```
+export DEVMACHINE='true'
+```
 * Finally run
-`go run main.go`
+```
+go run main.go
+```
 * Or
-`go install && $GOPATH/bin/psqlrestapi`
+```
+go install && $GOPATH/bin/psqlrestapi
+```
 
 ## TESTS
 
