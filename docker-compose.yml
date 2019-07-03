@@ -1,0 +1,25 @@
+version: '3'
+services:
+  app:
+    container_name: restapi
+    restart: always
+    build: .
+    ports:
+      - '8000:8000'
+    links:
+      - postgres
+    depends_on:
+      - postgres
+    environment:
+      WAIT_HOSTS: postgres:5432
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
